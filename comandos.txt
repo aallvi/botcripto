@@ -1,0 +1,28 @@
+descargar datos:
+      freqtrade download-data -t 30m --timerange 20200101-20211101
+  // descargara todos los de la white list
+
+backtesting en intervalo de tiempo:
+      freqtrade backtesting --strategy Super -i 4h --timerange 20211001-20211101 --export trades
+
+crear plantilla para nueva estrategia 
+      freqtrade new-strategy --strategy (aca pon nombre qe le qeras poner)
+
+
+plotear una backtesting 
+      freqtrade plot-dataframe --strategy SampleStrategy -p ZIL/USDT -i 1d
+
+plotear ganancias de intervalos :
+      freqtrade plot-profit -i 1d 
+
+observar de que pares y que temporalidad tenemos datos:
+      freqtrade list-data
+
+
+verificar que los indicadores de la estrategia se esten dibujando bien (antes de colocar señales de compra o venta)
+      freqtrade plot-dataframe -p BTC/USDT --strategy BBandsRSI -i 1d --no-trades
+
+
+Iniciar el trade  (fijarse si el config.json esta o no el dry run)
+
+freqtrade trade --strategy Super
